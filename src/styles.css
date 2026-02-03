@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component styles */
+.a2ui-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.a2ui-card {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.a2ui-code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.a2ui-input {
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.a2ui-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.a2ui-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

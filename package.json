@@ -1,0 +1,109 @@
+{
+  "name": "@deepagents/a2ui",
+  "version": "1.0.0",
+  "description": "Pre-approved React components for Agent-to-User Interface protocol",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./components/*": {
+      "import": {
+        "types": "./dist/components/*.d.ts",
+        "default": "./dist/components/*.js"
+      }
+    },
+    "./styles": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "tsdown && tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "clean": "rm -rf dist/ .tsdown/",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavinciDreams/a2ui.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "a2ui",
+    "agent-to-user-interface",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "DavinciDreams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavinciDreams/a2ui/issues"
+  },
+  "homepage": "https://github.com/DavinciDreams/a2ui#readme",
+  "peerDependencies": {
+    "deepagents": "^1.6.0",
+    "deepagents-interop": "^1.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "deepagents": {
+      "optional": true
+    },
+    "deepagents-interop": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitest/coverage-v8": "^4.0.17",
+    "autoprefixer": "^10.4.20",
+    "deepagents": "^1.6.0",
+    "deepagents-interop": "^1.0.0",
+    "postcss": "^8.4.49",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "storybook": "^8.0.0",
+    "tailwindcss": "^4",
+    "tsdown": "^0.19.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
